@@ -1,11 +1,16 @@
 import React from 'react';
-import { styled } from './styled.js';
+
 
 export default function Error() {
     return (
-        <div>
-            
-        </div>
+        <>
+            <NotFoundPage />
+        </>
     );
 }
 
+
+
+const NotFoundPage = () => {
+    return <h1>404 Page NotFound</h1>;
+}

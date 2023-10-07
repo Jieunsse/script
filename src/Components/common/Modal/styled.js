@@ -11,9 +11,11 @@ export const Body = styled.div`
     background: #FFF;
 `;
 
+
 export const Frame = styled.div`
     margin-top: 250px;
 `;
+
 
 export const Box = styled.div`
     width: 255px;
@@ -26,6 +28,7 @@ export const Box = styled.div`
 
     background: #FFF;
 `;
+
 
 export const InputId = styled.input`
     width: 250px;
@@ -49,6 +52,7 @@ export const InputId = styled.input`
         font-weight: semi-bold;
     }
 `;
+
 
 export const InputPwd = styled.input`
     width: 250px;
@@ -128,6 +132,7 @@ export const ImgLogo = styled.img`
     margin-bottom: 10px;
 `;
 
+
 export const SmallLogo = styled.img`
     width: 70px;
     height: 16px;
@@ -143,10 +148,10 @@ export const CopyLogo = styled.img`
     margin: 5px 10px 10px 5px;
 `;
 
+
 export const Bar = styled.div`
     margin: 0px 0px 5px 2px;
     padding: 3px 2px 1px 1px;
-
 
     font-size: 12px;
     color: rgba(161, 161, 161, 0.70);
