@@ -20,10 +20,10 @@ export const Box = styled.div`
     height: 155px;
     padding: 20px 18px 20px 0px;
     
-
     border: 1px solid #000;
     border-width: 0.6px;
     border-radius: 5px;
+
     background: #FFF;
 `;
 
@@ -45,7 +45,7 @@ export const InputId = styled.input`
 
     &::placeholder {
         font-size: 13px;
-        padding-left: 5px;
+        padding-left: 3px;
         font-weight: semi-bold;
     }
 `;
@@ -67,7 +67,7 @@ export const InputPwd = styled.input`
     }
 
     &::placeholder {
-        padding-left: 5px;
+        padding-left: 3px;
         font-weight: semi-bold;
         font-size: 13px;
     }
@@ -82,20 +82,44 @@ export const LoginBtn = styled.button`
 
     border-radius: 1px;
     border: none;
+
     color: #FFF;
     background: #1876FB;
     font-weight: bold;
+
+    &:hover {
+        opacity: 90%;
+        cursor: pointer;
+    }
 `;
 
 
 export const UserInfos = styled.div`
-    margin-top: 2.5px;
-    margin-left: 40px;
+    display: flex;
+    margin-left: 38px;
+`;
 
-    color: rgba(161, 161, 161, 0.70);
-    font-size: 10px;
+
+export const UserInfo = styled.button`
+    padding-left: 5px;
+    margin-left: 5px;
+
+    font-size: 9px;
     font-weight: bold;
-    letter-spacing: 2px;
+    letter-spacing: 0.3px;
+
+    border: none;
+    background: #FFFFFF;
+    color: rgba(161, 161, 161, 0.70);
+
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+        color: #000;
+        opacity: 60%;
+        cursor: pointer;
+    }
 `;
 
 
@@ -116,5 +140,18 @@ export const SmallLogo = styled.img`
 
 export const CopyLogo = styled.img`
     height: 8px;
-    margin: 10px 10px 10px 5px;
+    margin: 5px 10px 10px 5px;
+`;
+
+export const Bar = styled.div`
+    margin: 0px 0px 5px 2px;
+    padding: 3px 2px 1px 1px;
+
+
+    font-size: 12px;
+    color: rgba(161, 161, 161, 0.70);
+
+    &:hover {
+        cursor: default;
+    }
 `;
