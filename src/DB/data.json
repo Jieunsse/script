@@ -1,0 +1,46 @@
+[
+    {
+        "room": 101,
+        "name": "레몬",
+        "person": 4,
+        "price" : 55000
+    },
+    {
+        "room": 102,
+        "name": "체리",
+        "person": 6,
+        "price" : 74000
+    },
+    {
+        "room": 202,
+        "name": "바다",
+        "person": 4,
+        "price": 60000
+    },
+    {
+        "room": 203,
+        "name": "하늘",
+        "person": 8,
+        "price": 88000
+    },
+    {
+        "room": 205,
+        "name": "숲",
+        "person": 8,
+        "price": 94000
+    },
+    {
+        "room": 301,
+        "name": "스마일",
+        "person": 6,
+        "price": 60000
+    },
+    {
+        "room": 303,
+        "name": "구름",
+        "person": 6,
+        "price": 115000
+    }
+]
+
+
