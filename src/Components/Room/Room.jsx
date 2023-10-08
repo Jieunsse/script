@@ -1,15 +1,15 @@
 import React from 'react';
 import jsonData from '../../DB/data.json';
-import { Table, Td, Th, Tbody } from './style.js';
+import { Wrapper, Table, Td, Th, Tbody, Thead, Tr } from './style.js';
 
 
 
 export default function Room() {
 
     return (
-        <>
+        <Wrapper>
             <RoomTable/>
-        </>
+        </Wrapper>
     );
 }
 
@@ -31,14 +31,14 @@ const RoomTable = () => {
         <div>
             <h1>Room List</h1>
             <Table>
-                <thead>
-                    <tr>
+                <Thead>
+                    <Tr>
                         <Th>번호</Th>
                         <Th>이름</Th>
                         <Th>인원</Th>
                         <Th>가격</Th>
-                    </tr>
-                </thead>
+                    </Tr>
+                </Thead>
                 <Tbody>
                     {tableRows}
                 </Tbody>
