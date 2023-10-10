@@ -1,11 +1,12 @@
 import React from 'react';
-import { styled } from './styled.js';
+import { Wrapper } from './styled.js';
+import Modal from '../../Components/common/Modal/Modal.jsx';
 
 export default function Home() {
     return (
-        <div>
-            
-        </div>
+        <Wrapper>
+            <Modal />
+        </Wrapper>
     );
 }
 
