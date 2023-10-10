@@ -1,6 +1,4 @@
-import React from 'react';
-
-    // 예약 가능한 미팅룸 데이터.
+// 예약 가능한 미팅룸 데이터.
 const RoomData = [
     { id: 101, name: 'Lemon', capacity: 4, price: 55000 },
     { id: 102, name: 'Cherry', capacity: 6, price: 74000 },

@@ -13,6 +13,7 @@ export default function Room() {
     });
 
     const [ bookState, setBookState ] = useState([]);
+    const [ availableRooms, setAvailableRooms ] = useState(RoomData);
 
     const handleInput = (e) => {
         const { name, value } = e.target;
@@ -44,6 +45,7 @@ export default function Room() {
                     totalPrice: totalPrice
                 };
                 setBookState([...bookState, newBook]);
+                setAvailableRooms(availableRooms.filter(room => room.id !== selectedRoom.id));
                 setBook({
                     name: '',
                     roomNumber: '',
