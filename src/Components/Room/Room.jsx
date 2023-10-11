@@ -74,7 +74,7 @@ export default function Room() {
                     </Tr>
                 </Thead>
                 <Tbody>
-                    {RoomData.map(room => (
+                    {availableRooms.map((room) => (
                         <Tr key={room.id}>
                             <Td>{room.id}</Td>
                             <Td>{room.name}</Td>
