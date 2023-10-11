@@ -23,7 +23,7 @@ export const Box = styled.div`
     padding: 20px 18px 20px 0px;
     
     border: 1px solid #000;
-    border-width: 0.6px;
+    border-width: 0.8px;
     border-radius: 5px;
 
     background: #FFF;
