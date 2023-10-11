@@ -13,7 +13,6 @@ export default function Modal() {
     const navigate = useNavigate();
 
     const handleLogin = () => {
-        
         userName === '' || passWord === '' ? navigate('/') : navigate('/home');
     };
     
@@ -24,8 +23,8 @@ export default function Modal() {
             <Frame>
                 <Box>
                     <ImgLogo src={Logo} alt='로고'/>
-                    <InputId placeHolder='아이디' value={userName} onChange={(e) => setUserName(e.target.value)}/>
-                    <InputPwd placeHolder='비밀번호' type='password' value={passWord} onChange={(e) => setPassWord(e.target.value)}/>
+                    <InputId placeholder='아이디' value={userName} onChange={(e) => setUserName(e.target.value)}/>
+                    <InputPwd placeholder='비밀번호' type='password' value={passWord} onChange={(e) => setPassWord(e.target.value)}/>
                     <Link to={navigate}>
                         <LoginBtn onClick={handleLogin}>로그인</LoginBtn>
                     </Link>
