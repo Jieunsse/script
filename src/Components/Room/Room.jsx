@@ -2,62 +2,64 @@ import React, { useState } from 'react';
 import { Wrapper, Table, Td, Th, Tbody, Thead, Tr } from './style.js';
 import RoomData from '../../DB/RoomData';
 
-
 export default function Room() {
-
-    const [ book, setBook ] = useState({
+    const [book, setBook] = useState({
         name: '',
         roomNumber: '',
         persons: '',
-        time: ''
+        time: '',
     });
 
-    const [ bookState, setBookState ] = useState([]);
+    const [bookState, setBookState] = useState([]);
+    const [availableRooms, setAvailableRooms] = useState(RoomData);
 
     const handleInput = (e) => {
         const { name, value } = e.target;
-        setBook({
-            ...book,
-            [name]: value
-        });
+        setBook((prevBook) => ({
+            ...prevBook,
+            [name]: value,
+        }));
     };
 
     const wholePrice = (hours, pricePerHour) => {
-        // 입력된 시간을 3시간 단위로 올림처리하여 계산
-
         const totalHours = Math.ceil(parseFloat(hours) / 3);
         return totalHours * pricePerHour;
     };
 
-
     const handleBook = () => {
-        if(book.name && book.roomNumber && book.persons && book.time) {
-            const selectedRoom = RoomData.find(room => room.id === parseInt(book.roomNumber));
-            if(selectedRoom) {
-                const totalPrice = wholePrice(book.time, selectedRoom.price);
-                const newBook = {
-                    name: book.name,
-                    roomNumber: selectedRoom.id,
-                    roomName: selectedRoom.name,
-                    persons: parseInt(book.persons),
-                    time: book.time,
-                    totalPrice: totalPrice
-                };
-                setBookState([...bookState, newBook]);
-                setBook({
-                    name: '',
-                    roomNumber: '',
-                    persons: '',
-                    time: '',
-                });
-            } else {
-                alert('잘못된 회의실 번호입니다.');
-            }
-        } else {
+        if (!book.name || !book.roomNumber || !book.persons || !book.time) {
             alert('미입력된 부분을 전부 입력해주세요');
+            return;
+        }
+
+        const selectedRoom = availableRooms.find((room) => room.id === parseInt(book.roomNumber));
+        if (selectedRoom && !selectedRoom.isBooked) {
+            const totalPrice = wholePrice(book.time, selectedRoom.price);
+            const newBook = {
+                name: book.name,
+                roomNumber: selectedRoom.id,
+                roomName: selectedRoom.name,
+                persons: parseInt(book.persons),
+                time: book.time,
+                totalPrice: totalPrice,
+            };
+
+            setBookState([...bookState, newBook]);
+            setAvailableRooms((prevRooms) => prevRooms.filter((room) => room.id !== selectedRoom.id));
+            setBook({
+                name: '',
+                roomNumber: '',
+                persons: '',
+                time: '',
+            });
+        } else {
+            if (!selectedRoom) {
+                alert('잘못된 회의실 번호입니다.');
+            } else {
+                alert('이미 예약된 방입니다.');
+            }
         }
     };
-
 
     return (
         <Wrapper>
@@ -72,7 +74,7 @@ export default function Room() {
                     </Tr>
                 </Thead>
                 <Tbody>
-                    {RoomData.map(room => (
+                    {availableRooms.map((room) => (
                         <Tr key={room.id}>
                             <Td>{room.id}</Td>
                             <Td>{room.name}</Td>
@@ -97,7 +99,7 @@ export default function Room() {
                 <br />
                 <label>
                 인원: 
-                <input type="number" name="persons" value={book.persons} onChange={handleInput} />
+                <input type="text" name="persons" value={book.persons} onChange={handleInput} />
                 </label>
                 <br />
                 <label>
@@ -136,13 +138,3 @@ export default function Room() {
         </Wrapper>     
     );
 }
-
-
-
-
-
-
-
-
-
-

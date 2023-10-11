@@ -1,10 +1,15 @@
 import React from 'react';
+import { useRouteError } from 'react-router-dom';
 import { Body, Title, ErrorLogo } from './styled.js';
 import ErrorImg from '../../assets/ErrorImg.svg';
 
 
 
 export default function Error() {
+
+    const error = useRouteError();
+    console.error(error);
+
     return (
         <Body>
             <ErrorMsg />
