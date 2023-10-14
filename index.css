@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'googleNotoSansKR'
+    src: url(./src/assets/fonts/Noto_Sans_KR/NotoSansKR-VariableFont_wght.ttf);
+}
+
+:root {
+    --font-googleGugi: 'googleGugi';
+    --font-googleNotoSansKR: 'NotoSansKR';
+}
+

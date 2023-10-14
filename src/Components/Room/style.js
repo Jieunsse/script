@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-
+import NotoSansKR from '../../assets/fonts/Noto_Sans_KR/NotoSansKR-VariableFont_wght.ttf';
 
 export const Wrapper = styled.div`
     margin-left: 100px;
-
+    font-family: var(--font-NotoSansKR);
 `;
 
 
