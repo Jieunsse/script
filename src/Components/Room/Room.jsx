@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Wrapper, Table, Td, Th, Tbody, Thead, Tr } from './style.js';
+import { Wrapper, Table, Td, Th, Tbody, Thead, Tr, H1, H2, Label, Input, Button } from './style.js';
 import RoomData from '../../DB/RoomData';
+
 
 export default function Room() {
     const [book, setBook] = useState({
@@ -63,7 +64,7 @@ export default function Room() {
 
     return (
         <Wrapper>
-            <h1> 예약 가능한 룸 </h1>
+            <H1> 예약 가능한 룸 </H1>
             <Table>
                 <Thead>
                     <Tr>
@@ -85,32 +86,32 @@ export default function Room() {
                 </Tbody>
             </Table>
 
-            <h2>Meeting Room Reservation</h2>
+            <H2>Meeting Room Reservation</H2>
             <div>
-                <label>
+                <Label>
                 예약자: 
-                <input type="text" name="name" value={book.name} onChange={handleInput} />
-                </label>
+                <Input type="text" name="name" value={book.name} onChange={handleInput} />
+                </Label>
                 <br />
-                <label>
+                <Label>
                 룸번호: 
-                <input type="text" name="roomNumber" value={book.roomNumber} onChange={handleInput} />
-                </label>
+                <Input type="text" name="roomNumber" value={book.roomNumber} onChange={handleInput} />
+                </Label>
                 <br />
-                <label>
+                <Label>
                 인원: 
-                <input type="text" name="persons" value={book.persons} onChange={handleInput} />
-                </label>
+                <Input type="text" name="persons" value={book.persons} onChange={handleInput} />
+                </Label>
                 <br />
-                <label>
+                <Label>
                 이용시간: 
-                <input type="text" name="time" value={book.time} onChange={handleInput} />
-                </label>
+                <Input type="text" name="time" value={book.time} onChange={handleInput} />
+                </Label>
                 <br />
-                <button onClick={handleBook}>예약하기</button>
+                <Button onClick={handleBook}>예약하기</Button>
             </div>
 
-            <h2>Meeting Room Reservation Status</h2>
+            <H2>Meeting Room Reservation Status</H2>
             <Table>
                 <Thead>
                 <Tr>
