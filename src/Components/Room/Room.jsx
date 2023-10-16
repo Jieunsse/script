@@ -86,7 +86,7 @@ export default function Room() {
                 </Tbody>
             </Table>
 
-            <H2>Meeting Room Reservation</H2>
+            <H2>회의실 예약하기</H2>
             <div>
                 <Label>
                 예약자: 
@@ -111,7 +111,7 @@ export default function Room() {
                 <Button onClick={handleBook}>예약하기</Button>
             </div>
 
-            <H2>Meeting Room Reservation Status</H2>
+            <H2>미팅룸 예약 현황</H2>
             <Table>
                 <Thead>
                 <Tr>
