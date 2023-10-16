@@ -26,6 +26,18 @@ export const H1 = styled.h1`
 export const H2 = styled.h2`
     font-family: 'Sunflower', sans-serif;
     margin-bottom: 30px;
+    padding-top: 3px;
+
+    width: 180px;
+    height: 30px;
+
+    display: inline-block;
+
+    border: 1px solid #ddd;
+    border-raidus: 2px;
+    background-color: #1876FB;
+    text-align: center;
+    color: white;
 `;
 
 export const Table = styled.table`
@@ -100,3 +112,4 @@ export const Button = styled.button`
 
     font-faimly: 'Sunflower', sans-serif;
 `;
+
